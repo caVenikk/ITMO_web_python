@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Микросервисы - Nikita Novikov</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "\u041c\u0438\u043a\u0440\u043e\u0441\u0435\u0440\u0432\u0438\u0441\u044b";
+        var mkdocs_page_input_path = "microservices_usage.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Nikita Novikov
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Default Page</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">Микросервисы</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#_2">Введение</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_3">Основные принципы микросервисной архитектуры</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_4">Применение микросервисной архитектуры</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_5">Ограничения микросервисной архитектуры</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_6">Сравнение микросервисной и монолитной архитектур</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_7">Заключение</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Nikita Novikov</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Микросервисы</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="_1">Использование микросервисной архитектуры при проектировании и разработке информационных систем</h1>
+<h2 id="_2">Введение</h2>
+<p>Микросервисная архитектура (МА) на сегодняшний день является одним из наиболее популярных подходов к проектированию информационных систем, особенно в условиях сложных и масштабных проектов. МА представляет собой набор небольших, автономных сервисов, каждый из которых выполняет отдельную функцию в системе, взаимодействуя с другими микросервисами через API.</p>
+<h2 id="_3">Основные принципы микросервисной архитектуры</h2>
+<p>Основные принципы микросервисной архитектуры включают автономность, которая подразумевает независимость каждого микросервиса, позволяя ему развертываться и масштабироваться отдельно от других. Это повышает производительность и надежность системы, а также дает пользователям больше гарантий относительно качества работы. Слабая связность — ещё один важный принцип, который минимизирует зависимости между сервисами, позволяя легко изменять и обновлять их без воздействия на другие компоненты системы. Кроме того, принцип повторного использования подразумевает возможность применения некоторых микросервисов в различных контекстах, что снижает дублирование логики.</p>
+<p>Микросервисы также проектируются с учетом толерантности к сбоям, что позволяет системе продолжать функционировать при отказах соседних компонентов. При этом важно учитывать масштабируемость, позволяя увеличивать количество экземпляров сервисов или повышать их производительность в зависимости от нагрузки.</p>
+<h2 id="_4">Применение микросервисной архитектуры</h2>
+<p>Микросервисная архитектура особенно эффективна в крупных системах с высоким уровнем сложности и требованиями к масштабируемости. Она подходит для случаев, когда необходимо быстро внедрять новые функции и изменения. Например, в условиях высокой динамичности бизнес-требований микросервисы позволяют быстро развивать систему, так как каждый компонент может обновляться независимо. Также МА идеальна для распределенных команд, где каждая группа отвечает за свой микросервис, что снижает необходимость в тесной координации. Кроме того, в системах с высокими требованиями к отказоустойчивости, когда сбой одного сервиса не должен остановить работу всей системы, микросервисы минимизируют риск. Наконец, в условиях необходимости горизонтальной масштабируемости, когда система должна эффективно адаптироваться к изменяющимся условиям нагрузки, микросервисы предоставляют возможность увеличивать количество экземпляров только нужных компонентов.</p>
+<h2 id="_5">Ограничения микросервисной архитектуры</h2>
+<p>Однако микросервисная архитектура не всегда является идеальным решением. Существуют ситуации, когда предпочтительнее использовать монолитную архитектуру. Это, например, касается небольших проектов или стартапов, для которых микросервисы могут оказаться избыточными. Если команда разработки ограничена и сложно поддерживать множество микросервисов, монолитная архитектура может стать более простым и удобным вариантом. Кроме того, в случаях, когда требуется высокая скорость взаимодействия между частями системы и недопустима задержка в коммуникации, монолитные системы могут предоставить лучшую скорость за счет прямого взаимодействия.</p>
+<h2 id="_6">Сравнение микросервисной и монолитной архитектур</h2>
+<p>Различия между микросервисной и монолитной архитектурами можно наглядно представить в таблице, где отображаются их достоинства и недостатки.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Критерий</strong></th>
+<th><strong>Микросервисы</strong></th>
+<th><strong>Монолит</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Масштабируемость</strong></td>
+<td>Легко масштабируются отдельные сервисы</td>
+<td>Масштабируется целиком, более трудоемко</td>
+</tr>
+<tr>
+<td><strong>Отказоустойчивость</strong></td>
+<td>Сбой одного сервиса не влияет на другие</td>
+<td>Сбой в одной части может парализовать всю систему</td>
+</tr>
+<tr>
+<td><strong>Сложность разработки</strong></td>
+<td>Высокая, требуется много сервисов и координация между ними</td>
+<td>Низкая, единая структура кода</td>
+</tr>
+<tr>
+<td><strong>Затраты на инфраструктуру</strong></td>
+<td>Высокие, требуются дополнительные ресурсы для управления множеством сервисов</td>
+<td>Относительно низкие, единое приложение</td>
+</tr>
+<tr>
+<td><strong>Обновляемость</strong></td>
+<td>Независимые обновления сервисов</td>
+<td>Требуются комплексные обновления всей системы</td>
+</tr>
+<tr>
+<td><strong>Простота тестирования</strong></td>
+<td>Сложно тестировать интеграции между сервисами</td>
+<td>Легче тестировать, так как система цельная</td>
+</tr>
+<tr>
+<td><strong>Коммуникации</strong></td>
+<td>API между сервисами, возможны задержки</td>
+<td>Прямое взаимодействие внутри системы</td>
+</tr>
+<tr>
+<td><strong>Поддержка и эксплуатация</strong></td>
+<td>Требует DevOps-инструментов для автоматизации и мониторинга</td>
+<td>Простая эксплуатация в небольших проектах</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_7">Заключение</h2>
+<p>В заключение, микросервисная архитектура предоставляет значительные преимущества при разработке сложных и масштабируемых систем, но требует грамотного подхода к проектированию и эксплуатации. Для небольших проектов монолитная архитектура часто оказывается более оправданной, снижая операционные затраты и сложности. Выбор между этими архитектурными подходами зависит от специфики проекта, ресурсов и требований к системе.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href=".." class="btn btn-neutral float-left" title="Default Page"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href=".." style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
