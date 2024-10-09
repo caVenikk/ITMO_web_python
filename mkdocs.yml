@@ -1,0 +1,7 @@
+site_name: Nikita Novikov
+
+nav:
+  - Default Page: index.md
+  - Микросервисы: microservices_usage.md
+
+theme: readthedocs
