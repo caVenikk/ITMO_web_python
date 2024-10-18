@@ -1,9 +1,0 @@
-# Environment
-venv/
-
-# Python cache
-__pycache__/
-
-# IDEs
-.idea/
-.vscode/
