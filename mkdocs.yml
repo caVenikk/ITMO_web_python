@@ -1,7 +1,19 @@
 site_name: Nikita Novikov
+site_url: http://localhost:9090
+use_directory_urls: true
 
 nav:
-  - Default Page: index.md
+  - Главная: index.md
   - Микросервисы: microservices_usage.md
 
-theme: readthedocs
+theme:
+  name: null
+  custom_dir: theme
+extra_css:
+  - 'styles.css'
+extra_javascript:
+  - 'script.js'
+
+watch:
+- theme
+- docs
