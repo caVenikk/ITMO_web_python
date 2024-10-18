@@ -21,27 +21,23 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Install dependencies
+      - name: Install Python dependencies
         run: |
           pip install mkdocs
-          pip install htmlmin
-          pip install postcss-cli
-          pip install cssmin
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '20'
+
+      - name: Install npm dependencies
+        run: npm install
 
       - name: Build MkDocs site
         run: mkdocs build
 
-      - name: Validate HTML
-        run: |
-          find ./site -name '*.html' -exec htmlhint {} \;
-
-      - name: Minify HTML
-        run: |
-          find ./site -name '*.html' -exec htmlmin -o {} {} \;
-
-      - name: Minify CSS with PostCSS
-        run: |
-          find ./site -name '*.css' -exec postcss {} --use autoprefixer -d ./site \;
+      - name: Run CI Scripts
+        run: npm run ci
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
