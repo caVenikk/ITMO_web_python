@@ -1,5 +1,4 @@
 site_name: Nikita Novikov
-site_url: http://localhost:9090
 use_directory_urls: true
 
 nav:
